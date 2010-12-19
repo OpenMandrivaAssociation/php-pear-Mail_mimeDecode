@@ -3,7 +3,7 @@
 %define		upstream_name	%{_class}_%{_subclass}
 
 Name:		php-pear-%{upstream_name}
-Version:	1.5.4
+Version:	1.5.5
 Release:	%mkrel 1
 Summary:	Provides a class to decode mime messages
 License:	PHP License
