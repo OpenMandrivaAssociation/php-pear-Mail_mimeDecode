@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.5.5
-Release:	%mkrel 4
+Release:	%mkrel 2
 Summary:	Provides a class to decode mime messages
 License:	PHP License
 Group:		Development/PHP
@@ -15,8 +15,6 @@ Requires(preun): php-pear
 Requires:	php-pear
 BuildRequires:	php-pear
 BuildArch:	noarch
-# because it was broken out and the one doing it was pretty careless...
-Conflicts:	php-pear < 1:1.9
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -53,7 +51,7 @@ pear install --nodeps --soft --force --register-only \
 %if %mdkversion < 201000
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
-        %{upstream_name} >/dev/null || :
+        %{pear_name} >/dev/null || :
 fi
 %endif
 
@@ -62,3 +60,41 @@ fi
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/packages/%{upstream_name}.xml
 
+
+
+%changelog
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 1.5.5-2mdv2011.0
++ Revision: 667623
+- mass rebuild
+
+* Sun Dec 19 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.5-1mdv2011.0
++ Revision: 622932
+- update to new version 1.5.5
+
+* Tue Sep 14 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.4-1mdv2011.0
++ Revision: 578195
+- update to new version 1.5.4
+
+* Thu Sep 09 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.3-1mdv2011.0
++ Revision: 576924
+- update to new version 1.5.3
+
+* Tue Dec 15 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.1-1mdv2010.1
++ Revision: 478815
+- update to new version 1.5.1
+
+* Wed Nov 25 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.0-2mdv2010.1
++ Revision: 470148
+- spec cleanup
+- use pear installer
+- don't ship tests, even in documentation
+- own all directories
+- use rpm filetriggers starting from mandriva 2010.1
+
+* Sun Sep 27 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.0-1mdv2010.0
++ Revision: 450224
+- import php-pear-Mail_mimeDecode
+
+
+* Fri Sep 25 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.5.0-1mdv2010.0
+- split out from php-pear package
