@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.5.5
-Release:	%mkrel 2
+Release:	5
 Summary:	Provides a class to decode mime messages
 License:	PHP License
 Group:		Development/PHP
