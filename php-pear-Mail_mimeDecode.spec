@@ -5,7 +5,7 @@
 Summary:	Provides a class to decode mime messages
 Name:		php-pear-%{modname}
 Version:	1.5.5
-Release:	12
+Release:	13
 License:	PHP License
 Group:		Development/PHP
 Url:		http://pear.php.net/package/%{modname}
